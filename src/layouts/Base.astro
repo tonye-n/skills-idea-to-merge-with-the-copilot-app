@@ -153,6 +153,22 @@ const { title = "Mona's Bookmark Manager App" } = Astro.props;
         border-radius: var(--radius);
       }
 
+      body {
+        background:
+          radial-gradient(60rem 30rem at 50% -10rem, color-mix(in srgb, var(--accent) 22%, transparent), transparent),
+          Canvas;
+        min-height: 100vh;
+      }
+      h1 { font-size: clamp(1.4rem, 5vw, 1.9rem); }
+      .hint.error { color: #dc2626; }
+      li.bookmark { box-shadow: 0 1px 2px #0001; transition: border-color 0.15s, transform 0.15s; }
+      li.bookmark:hover { border-color: var(--accent); transform: translateY(-1px); }
+      .bookmark .url { color: var(--accent); text-decoration: none; font-weight: 600; }
+      .bookmark .url:hover { text-decoration: underline; }
+      .bookmark .sep { color: var(--muted); white-space: pre; }
+      .bookmark .slug { font-family: var(--font-body); font-weight: 600; }
+      @media (prefers-reduced-motion: reduce) { li.bookmark { transition: none; } }
+
       footer { margin-top: 2.5rem; font-size: 0.8rem; color: var(--muted); }
     </style>
   </head>
